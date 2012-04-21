@@ -1,0 +1,18 @@
+.pagination a.disabled, .pagination a:hover.disabled {
+    background-color: transparent;
+    color: #999999;
+    cursor: default;
+}
+
+.pagination a.active {
+    color: #999999;
+    cursor: default;
+}
+
+.pagination a:hover, .pagination a.active {
+    background-color: #F5F5F5;
+}
+
+.pagination {
+    margin: 0 !important;
+}

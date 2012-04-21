@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+    <title></title>
+</head>
+<body>
+<wicket:panel>
+    <ul class="pagination pull-right">
+        <li><a wicket:id="first">&lt;&lt;</a></li>
+        <li><a wicket:id="prev">&lt;</a></li>
+        <wicket:container wicket:id="navigation">
+            <li><a wicket:id="pageLink" href="#"><span wicket:id="pageNumber"></span></a></li>
+        </wicket:container>
+        <li><a wicket:id="next">&gt;</a></li>
+        <li><a wicket:id="last" class="last">&gt;&gt;</a></li>
+    </ul>
+</wicket:panel>
+</body>
+</html>
