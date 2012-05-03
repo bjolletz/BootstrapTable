@@ -68,9 +68,9 @@
         </repository>
     </distributionManagement>
 
-    <!--<scm>-->
-        <!--<connection>scm:git:git@github.com:bjolletz/bootstraptable.git</connection>-->
-        <!--<url>scm:git:git@github.com:bjolletz/bootstraptable.git</url>-->
-        <!--<developerConnection>scm:git:git@github.com:bjolletz/bootstraptable.git</developerConnection>-->
-    <!--</scm>-->
+    <scm>
+        <connection>scm:git:git@github.com:bjolletz/bootstraptable.git</connection>
+        <url>scm:git:git@github.com:bjolletz/bootstraptable.git</url>
+        <developerConnection>scm:git:git@github.com:bjolletz/bootstraptable.git</developerConnection>
+    </scm>
 </project>
