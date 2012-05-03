@@ -4,10 +4,49 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>se.dmsoftware.bootstraptable</groupId>
+    <groupId>se.dmsoftware</groupId>
     <artifactId>bootstraptable</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <!--<includes>-->
+                    <!--<include>*.java</include>-->
+                    <!--<include>*.html</include>-->
+                    <!--</includes>-->
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <!-- Copy wicket HTML and other resource files from the java directory -->
+                <filtering>false</filtering>
+                <directory>${basedir}/src/main/java</directory>
+                <includes>
+                    <include>**/*.html</include>
+                    <include>**/*.js</include>
+                    <include>**/*.png</include>
+                    <include>**/*.css</include>
+                    <include>**/*.jpg</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+    </build>
+    <properties>
+        <github.maven.repository>file:///C:\Users\Daniel\IdeaProjects\bjolletz-mvn-repo</github.maven.repository>
+    </properties>
+
 
     <dependencies>
         <dependency>
@@ -29,4 +68,12 @@
             <url>http://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <url>${github.maven.repository}</url>
+        </repository>
+    </distributionManagement>
+
 </project>
