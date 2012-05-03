@@ -6,7 +6,7 @@
 
     <groupId>se.dmsoftware</groupId>
     <artifactId>bootstraptable</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <build>
@@ -76,4 +76,9 @@
         </repository>
     </distributionManagement>
 
+    <scm>
+        <connection>scm:git:git@github.com:bjolletz/bootstraptable.git</connection>
+        <url>scm:git:git@github.com:bjolletz/bootstraptable.git</url>
+        <developerConnection>scm:git:git@github.com:bjolletz/bootstraptable.git</developerConnection>
+    </scm>
 </project>
