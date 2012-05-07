@@ -1,14 +1,16 @@
 package se.dmsoftware.bootstraptable.pagingtoolbar;
 
-import org.apache.wicket.Component;
+import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigationIncrementLink;
+import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigationLink;
+import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.MarkupStream;
 import org.apache.wicket.markup.html.IHeaderResponse;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.internal.HtmlHeaderContainer;
 import org.apache.wicket.markup.html.link.AbstractLink;
-import org.apache.wicket.markup.html.list.LoopItem;
-import org.apache.wicket.markup.html.navigation.paging.*;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.navigation.paging.IPageable;
+import org.apache.wicket.markup.html.navigation.paging.IPagingLabelProvider;
+import org.apache.wicket.markup.html.navigation.paging.PagingNavigation;
+import org.apache.wicket.markup.html.navigation.paging.PagingNavigationLink;
 import org.apache.wicket.request.resource.CssResourceReference;
 
 /**
@@ -16,7 +18,7 @@ import org.apache.wicket.request.resource.CssResourceReference;
  * Date: 2012-04-20
  * Time: 00:50
  */
-public class BootstrapPagingNavigator extends PagingNavigator {
+public class BootstrapPagingNavigator extends AjaxPagingNavigator {
     public BootstrapPagingNavigator(String id, IPageable pageable) {
         super(id, pageable);
     }
@@ -43,8 +45,8 @@ public class BootstrapPagingNavigator extends PagingNavigator {
     }
 
     @Override
-    protected AbstractLink newPagingNavigationIncrementLink(String id, IPageable pageable, int increment) {
-        return new PagingNavigationIncrementLink<Void>(id, pageable, increment) {
+    protected Link<?> newPagingNavigationIncrementLink(String id, IPageable pageable, int increment) {
+        return new AjaxPagingNavigationIncrementLink(id, pageable, increment) {
             @Override
             protected void disableLink(ComponentTag tag) {
                 tag.put("class", "disabled");
@@ -53,8 +55,8 @@ public class BootstrapPagingNavigator extends PagingNavigator {
     }
 
     @Override
-    protected AbstractLink newPagingNavigationLink(String id, IPageable pageable, int pageNumber) {
-        return new PagingNavigationLink<Void>(id, pageable, pageNumber) {
+    protected Link<?> newPagingNavigationLink(String id, IPageable pageable, int pageNumber) {
+        return new AjaxPagingNavigationLink(id, pageable, pageNumber) {
             @Override
             protected void disableLink(ComponentTag tag) {
                 tag.put("class", "disabled");
