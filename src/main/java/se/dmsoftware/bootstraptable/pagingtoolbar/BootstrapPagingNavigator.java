@@ -34,7 +34,7 @@ public class BootstrapPagingNavigator extends AjaxPagingNavigator {
         return new PagingNavigation(id, pageable, labelProvider) {
             @Override
             protected AbstractLink newPagingNavigationLink(String id, IPageable pageable, int pageIndex) {
-                return new PagingNavigationLink<Void>(id, pageable, pageIndex) {
+                return new AjaxPagingNavigationLink(id, pageable, pageIndex) {
                     @Override
                     protected void disableLink(ComponentTag tag) {
                         tag.put("class", "active");
