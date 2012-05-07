@@ -1,7 +1,7 @@
 package se.dmsoftware.bootstraptable.pagingtoolbar;
 
+import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxNavigationToolbar;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.NavigationToolbar;
 import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 
 /**
@@ -9,7 +9,7 @@ import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
  *
  * @author Daniek Åkerlund
  */
-public class BootstrapPagingToolbar extends NavigationToolbar {
+public class BootstrapPagingToolbar extends AjaxNavigationToolbar {
 
     public BootstrapPagingToolbar(DataTable<?> table) {
         super(table);
